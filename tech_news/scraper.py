@@ -1,12 +1,14 @@
 import requests
+import time
 
 
 # Requisito 1
-def fetch(url, wait: int = 1):
+def fetch(url):
+    time.sleep(1)
     try:
         response = requests.get(
             url,
-            timeout=wait,
+            timeout=2,
             headers={"user-agent": "Fake user-agent"}
             )
         response.raise_for_status()
