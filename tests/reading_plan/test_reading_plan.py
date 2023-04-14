@@ -3,24 +3,26 @@ from unittest.mock import MagicMock
 import pytest
 
 
-news_mock = (
-        'https://blog.betrybe.com/novidades/noticia-bacana',
-        'Notícia bacana',
-        '04/04/2021',
-        'Eu',
-        4,
-        'Algo muito bacana aconteceu',
-        'Ferramentas',
-),
-(
-        'https://blog.betrybe.com/novidades/noticia-longa-demais',
-        'Notícia longa',
-        '07/02/2022',
-        'Eles',
-        80,
-        'Política financeira',
-        'Economia',
-)
+news_mock = [
+    {
+        'url': 'https://blog.betrybe.com/novidades/noticia-bacana',
+        'title': 'Notícia bacana',
+        'timestamp': '04/04/2021',
+        'writer': 'Eu',
+        'reading_time': 4,
+        'summary': 'Algo muito bacana aconteceu',
+        'category': 'Ferramentas',
+    },
+    {
+        'url': 'https://blog.betrybe.com/novidades/noticia-longa',
+        'title': 'Notícia longa',
+        'timestamp': '07/02/2022',
+        'writer': 'Eles',
+        'reading_time': 80,
+        'summary': 'Política financeira',
+        'category': 'Economia',
+    }
+]
 
 mock_response = {
     'readable': [
@@ -39,7 +41,7 @@ def test_reading_plan_group_news():
 
     ReadingPlanService._db_news_proxy = MagicMock(return_value=news_mock)
 
-    answer = ReadingPlanService.group_news_for_available_time(15)
+    answer = ReadingPlanService.group_news_for_available_time(16)
 
     assert len(answer['readable']) == 1
     assert answer['readable'][0]['unfilled_time'] == 12
