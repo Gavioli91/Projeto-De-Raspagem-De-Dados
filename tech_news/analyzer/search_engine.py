@@ -26,8 +26,7 @@ def search_by_date(date):
     try:
         matter = search_news(
             {
-             'timestamp': datetime.strftime
-             (date, "%Y-%m-%d").strftime('%d/%m/%Y')
+             'timestamp': datetime.fromisoformat("%Y-%m-%d").strftime('%d/%m/%Y')
             }
         )
         list = []
