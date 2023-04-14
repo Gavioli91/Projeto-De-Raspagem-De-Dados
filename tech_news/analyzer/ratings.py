@@ -8,7 +8,7 @@ def top_5_categories():
     types_of_categories = []
 
     for index in matter:
-        types_of_categories.add(
+        types_of_categories.append(
             index[
                   'category'
                  ]
@@ -18,6 +18,6 @@ def top_5_categories():
         sorted(types_of_categories)).most_common(5)
     most_acessed_category = []
     for category in quantity_of_categories:
-        most_acessed_category.add(category[0])
+        most_acessed_category.append(category[0])
 
     return most_acessed_category
