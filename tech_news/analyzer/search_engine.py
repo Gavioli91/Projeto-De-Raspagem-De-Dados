@@ -13,8 +13,7 @@ def search_by_title(title):
     )
 
     for reportage in matter:
-        index = reportage['title'],
-        reportage['url']
+        index = reportage['title'], reportage['url']
         list.append(index)
 
     return list
