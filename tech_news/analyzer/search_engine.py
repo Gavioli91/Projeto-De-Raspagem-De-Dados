@@ -3,12 +3,14 @@ from tech_news.database import search_news
 
 # Requisito 7
 def search_by_title(title):
-    matter = search_news({
+    matter = search_news(
+        {
          'title': {
             '$regex': title,
             '$options': 'i',
          }
-        })
+        }
+    )
     list = []
 
     for reportage in matter:
