@@ -11,7 +11,6 @@ def search_by_title(title):
          }
         }
     )
-    list = []
 
     for reportage in matter:
         index = reportage['title'],
