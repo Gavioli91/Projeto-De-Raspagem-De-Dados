@@ -62,7 +62,7 @@ def scrape_news(html_content):
 
 # Requisito 5
 def get_tech_news(amount):
-    go_next_page = fetch('https://blog.betrybe.com')
+    go_next_page = 'https://blog.betrybe.com/'
     links = scrape_updates(go_next_page)
     news = []
 
