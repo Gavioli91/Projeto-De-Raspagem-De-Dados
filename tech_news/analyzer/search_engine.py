@@ -1,5 +1,5 @@
 from tech_news.database import search_news
-from datetime import date as data
+from datetime import datetime
 
 
 # Requisito 7
@@ -26,7 +26,7 @@ def search_by_date(date):
     try:
         matter = search_news(
             {
-             'timestamp': data.fromisoformat(date).strftime('%d/%m/%Y')
+             'timestamp': datetime.fromisoformat(date).strftime('%d/%m/%Y')
             }
         )
         list = []
