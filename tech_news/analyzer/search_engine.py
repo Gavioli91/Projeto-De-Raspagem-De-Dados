@@ -45,16 +45,16 @@ def search_by_date(date):
 def search_by_category(category):
     matter = search_news(
         {
-         "category": {
-            "$regex": category,
-            "$options": "i",
+         'title': {
+            '$regex': category,
+            '$options': 'i',
          }
         }
     )
     list = []
 
     for reportage in matter:
-        index = reportage["title"], reportage["url"]
+        index = reportage['category'], reportage['url']
         list.append(index)
 
     return list
