@@ -54,7 +54,7 @@ def search_by_category(category):
     list = []
 
     for reportage in matter:
-        index = reportage['category'], reportage['url']
+        index = reportage['title'], reportage['url']
         list.append(index)
 
     return list
