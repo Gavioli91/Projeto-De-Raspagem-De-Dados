@@ -45,7 +45,7 @@ def search_by_date(date):
 def search_by_category(category):
     matter = search_news(
         {
-         'title': {
+         'category': {
             '$regex': category,
             '$options': 'i',
          }
