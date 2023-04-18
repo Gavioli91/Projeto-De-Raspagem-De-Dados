@@ -33,7 +33,7 @@ def analyzer_menu():
         case '3':
             menu = input('Digite a categoria: ')
             search_by_category(menu)
-        case 4:
+        case '4':
             top_5_categories()
         case '5':
             print('Encerrando script')
